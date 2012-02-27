@@ -76,10 +76,17 @@ $.script = (function(){
 
             var node = this.node;
 
-            // Handle memory leak in IE
-            node.onload = node.onerror = node.onreadystatechange = null;
+            // This prevents IE7-8 locking up.
+            setTimeout(function(){
 
-            head.removeChild(node);
+                // Handle memory leak in IE
+                node.onload = node.onerror = node.onreadystatechange = null;
+
+                try {
+                    head.removeChild(node);
+                } catch(e) {};
+
+            }, 1000);
         },
 
         load: function() {
