@@ -143,7 +143,7 @@ $.script = (function(){
                 if (script.state()!=="resolved") {
 
                     if (script.verbose) {
-                        console.warn('$.script: Load timeout - ' + script.url + '. [Retry: ' + script.retryCount + ']', script);
+                        console.warn('$.script: Load timeout. [Retry: ' + script.retryCount + ']', script);
                     }
 
                     script.remove();
@@ -163,7 +163,7 @@ $.script = (function(){
                 node = script.node;
 
             if (script.verbose) {
-                console.info('$.script: Load successful - ' + script.url, script);
+                console.info('$.script: Loaded ', script);
             }
 
             if (event.type==="load" || /loaded|complete/.test(node.readyState)) {
@@ -179,7 +179,7 @@ $.script = (function(){
             var script = this;
 
             if (script.verbose) {
-                console.error('$.script: Unable to load ' + script.url, script);
+                console.error('$.script: Unable to load ', script);
             }
 
             script.complete.call(script, event);
