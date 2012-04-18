@@ -162,9 +162,9 @@ $.script = (function(){
             var script = this,
                 node = script.node;
 
-            if (script.verbose) {
-                console.info('$.script: Loaded' + (($.browser.msie) ? ' ' + script.url.replace($.scriptPath, '') + ' ': ''), script);
-            }
+            // if (script.verbose) {
+            //     console.info('$.script: Loaded' + (($.browser.msie) ? ' ' + script.url.replace($.scriptPath, '') + ' ': ''), script);
+            // }
 
             if (event.type==="load" || /loaded|complete/.test(node.readyState)) {
 
