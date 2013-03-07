@@ -64,12 +64,7 @@ $.script = (function(){
         insert: function() {
 
             var node = this.node;
-
-            if (baseElement) {
-                head.insertBefore(node, baseElement);
-            } else {
-                head.appendChild(node);
-            }
+            head.appendChild(node);
         },
 
         remove: function() {
