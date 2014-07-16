@@ -61,10 +61,13 @@ $.script = (function(){
 
         verbose: false,
 
+        head: head,
+
         insert: function() {
 
             var node = this.node;
-            head.appendChild(node);
+
+            this.head.appendChild(node);
         },
 
         remove: function() {
