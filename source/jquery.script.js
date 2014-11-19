@@ -12,6 +12,14 @@
  *
  */
 
+$.Script = function(fn) {
+
+    var script = document.createElement("script");
+    script.text = $.isString(fn) ? fn : $.callback(fn) + "();";
+
+    return $(script);
+};
+
 $.script = (function(){
 
     var self = function(options) {
